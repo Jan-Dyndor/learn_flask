@@ -15,6 +15,13 @@ def test_string_var():
     assert "Jan" in response.data.decode("utf-8")
 
 
+def test_admin_page():
+    client = app.test_client()
+    response = client.get("/admin")
+    assert response.status_code == 200
+    assert "admin" in response.data.decode("utf-8")
+
+
 def test_int_var():
     client = app.test_client()
     response = client.get("/blog/24")
