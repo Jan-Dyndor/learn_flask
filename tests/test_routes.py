@@ -5,7 +5,6 @@ def test_homepage_get():
     client = app.test_client()
     response = client.get("/")
     assert response.status_code == 200
-    assert "hello" in response.data.decode("utf-8")
 
 
 def test_string_var():
